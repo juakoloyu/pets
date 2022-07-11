@@ -30,14 +30,14 @@ COPY Gemfile Gemfile.lock /app/
 ENV BUNDLE_PATH /gems
 # RUN yarn install
 
-# RUN apk add vips-dev
-# RUN apk add imagemagick
+RUN apk add vips-dev
+RUN apk add imagemagick
 # RUN apk add ffmpeg
 # RUN apk add poppler
 
 #RUN gem install solargraph
 RUN gem install bundler -v 2.3.4
-# RUN gem install ruby-vips
+RUN gem install ruby-vips
 RUN bundle install
 
 COPY . /app/
