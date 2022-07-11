@@ -1,0 +1,11 @@
+body {
+  background-color: #F2FFFF;
+}
+
+.btn {
+  border-radius: 25px;
+}
+
+.btn-primary {
+  color: #fff;
+}
