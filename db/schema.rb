@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_11_171250) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_12_132105) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,11 +58,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_171250) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_pictures_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "animal_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.datetime "discarded_at"
     t.index ["animal_id"], name: "index_posts_on_animal_id"
+    t.index ["discarded_at"], name: "index_posts_on_discarded_at"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,5 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_171250) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "pictures", "posts"
   add_foreign_key "posts", "animals"
+  add_foreign_key "posts", "users"
 end

@@ -5,3 +5,7 @@ one:
 
 two:
   animal: two
+
+valid_post:
+  animal: one
+  user: two

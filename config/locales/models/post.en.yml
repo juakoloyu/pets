@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    attributes:
+      post:
+        description: Description
+    errors:
+      models:
+        post:
+          attributes:
+            description:
+              blank: The field is required
+  flash:
+    post:
+      created:
+        success: The post was created successfully
+        error: Error, there were errors
+      updated:
+        success: The post was updated successfully
+        error: Error, there were errors
+      deleted:
+        success: The post was deleted successfully
+        error: Error, there were errors

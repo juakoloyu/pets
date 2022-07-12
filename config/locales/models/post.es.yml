@@ -1,0 +1,22 @@
+es:
+  activerecord:
+    attributes:
+      post:
+        description: Descripción
+    errors:
+      models:
+        post:
+          attributes:
+            description:
+              blank: El campo es obligatorio
+  flash:
+    post:
+      created:
+        success: Se ha creado la publicación correctamente
+        error: Error, se han encontrado errores
+      updated:
+        success: Se actualizó la publicación correctamente
+        error: Error, se han encontrado errores
+      deleted:
+        success: Se ha eliminado la publicación correctamente
+        error: Error, se han encontrado errores

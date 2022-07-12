@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(user: current_user).kept
   end
 
   # GET /posts/1 or /posts/1.json
@@ -15,16 +15,19 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    3.times { @post.pictures.build }
   end
 
   # GET /posts/1/edit
   def edit
+    authorize @post
+    (3 - @post.pictures.count).times { @post.pictures.build }
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -51,7 +54,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy
+    @post.discard
 
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
@@ -70,6 +73,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:description, :animal_id)
+      params.require(:post).permit(:description, :animal_id, pictures_attributes: [:id, :pic, :_destroy])
     end
 end

@@ -74,3 +74,11 @@ end
 gem "bootstrap", "~> 5.1"
 
 gem 'devise'
+
+gem "pundit", "~> 2.2"
+
+gem "i18n-tasks", "~> 1.0"
+
+gem "discard", "~> 1.2"
+
+gem "faker", "~> 2.21"

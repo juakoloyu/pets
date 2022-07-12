@@ -1,0 +1,10 @@
+---
+es:
+  back: Atrás
+  create: Crear
+  errors:
+    messages:
+      not_saved: No se ha guardado
+  hello: Hello world
+  post:
+    new: Dar en adopción
