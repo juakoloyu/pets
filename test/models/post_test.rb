@@ -5,11 +5,17 @@ class PostTest < ActiveSupport::TestCase
   test 'animal is required' do
     post = Post.new(animal: nil, user: users(:one))
     assert_not post.valid?
+
+    post.animal = animals(:one)
+    assert post.valid?
   end
   
   test 'user is required' do
     post = Post.new(animal: animals(:one), user: nil)
     assert_not post.valid?
+
+    post.user = users(:one)
+    assert post.valid?
   end
 
   test 'post is valid' do

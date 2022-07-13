@@ -1,12 +1,10 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-  <p>
-    <strong>Animal:</strong>
-    <%= post.animal_id %>
-  </p>
-
+    <div class="card card-post">
+      <%= link_to post_path(post), target: '_top', class:'text-decoration-none link-image' do %>
+        <%= image_tag url_for(post.pictures.first.pic), style: 'max-width: 300px'%>
+      <% end %>
+    </div>
 </div>
+
+
+

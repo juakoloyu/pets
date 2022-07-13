@@ -9,3 +9,4 @@ pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
 pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.1.3/dist/js/bootstrap.esm.js"
 pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.2/dist/esm/index.js" # use unpkg.com as ga.jspm.io contains a broken popper package
+pin "swiper", to: "https://unpkg.com/swiper@8.0.7/swiper-bundle.esm.browser.min.js"

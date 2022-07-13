@@ -1,8 +1,22 @@
-
-<%= image_tag "pets.svg", size: '800' %>
-<%= link_to 'Adoptar','#adoptables' ,class: 'btn btn-primary' %>
-<%= link_to 'Dar en adopción','#', class: 'btn btn-primary' %>
+<div class="row">
+  <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <h1>Adoptemos y demos <br> una oportunidad</h1>
+      <h2>Ayudemos a conseguir un <br> hogar</h2>
+      <%= link_to 'Adoptar','#adoptables' ,class: 'btn btn-primary' %>
+      <%= link_to 'Dar en adopción','#', class: 'btn btn-primary' %>
+  </div>
+  <div class="col-md-6">
+    <div class="">
+      <%= image_tag "pets.svg", size: '800' %>
+    </div>
+  </div>
+</div>
 
 <div id="adoptables">
-  
+  <h1><%= t('pets_waiting_a_home')%></h1>
+  <%= turbo_frame_tag :posts, src: '/swiper/home' do %>
+    <div class="d-flex justify-content-center">
+      <%= image_tag "dog.gif", height: 300 %>
+    </div>
+  <% end %>
 </div>

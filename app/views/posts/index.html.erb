@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t('my_posts')%></h1>
 
-<h1>Posts</h1>
+<%= turbo_frame_tag :posts, src: 'swiper/my' do %>
+  <div class="d-flex justify-content-center">
+    <%= image_tag "dog.gif", height: 300 %>
+  </div>
+<% end %>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>
+<%= link_to t("post.new"), new_post_path %>

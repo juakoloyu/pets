@@ -14,7 +14,16 @@
  *= require_self
  *= require style
  *= require actiontext
+ *= require swiper-bundle.min.css
  */
+ @font-face {
+  font-family: 'Trankya';
+  src: url('assets/trankya_font.otf');
+}
  $primary: #6ca8bc;
+ $success: #69C9AD;
+ $danger: #c65670;
+ $warning: #C96F55;
+ $font-family-base: 'Trankya', sans-serif;
+ $font-size-base: 1.5rem;
  @import "bootstrap";
-

@@ -1,10 +1,34 @@
 ---
 es:
+  activerecord:
+    attributes:
+      post:
+        description: Description
   back: Atrás
   create: Crear
+  destroy: Eliminar
+  didnt_receive_confirmation_instructions: No recibiste instrucciones de confirmación?
+  didnt_receive_unlock_instructions: No recibiste instrucciones de desbloqueo?
+  edit: Editar
   errors:
     messages:
       not_saved: No se ha guardado
+  forgot: Olvidé mi contraseña
   hello: Hello world
+  home: Inicio
+  image: Imagen
+  login: Ingresar
+  logout: Salir
+  my_posts: Mis publicaciones
+  name: Nombre
+  pets_waiting_a_home: Mascotas esperando un hogar
+  photos: Fotos
   post:
+    back: Volver
+    destroy: Eliminar publicación
+    edit: Editar
+    my: My
     new: Dar en adopción
+    show: Ver esta publicación
+  posts: Publicaciones
+  signup: Registrarme

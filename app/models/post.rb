@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   include Discard::Model
-  validates :user_id, :animal_id, presence: true
+  validates :user_id, presence: true
+  validates :animal, presence: true
   belongs_to :animal
   belongs_to :user
   has_rich_text :description

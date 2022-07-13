@@ -21,10 +21,14 @@
   </div>
 
   <div>
-    <%= form.collection_radio_buttons :animal_id, @animals, :id, :name %>
+    <%= form.collection_radio_buttons :animal_id, @animals, :id, :name, boolean_style: :inline do |check| %>
+      <%= image_tag check.object.image, size: 200 %>
+      <%= check.radio_button %>
+      <%= check.object.name %>
+    <% end %>
   </div>
 
-  <div>
-    <%= form.submit t('create')%>
+  <div class="pt-2">
+    <%= form.submit t('create'), class: 'btn btn-primary' %>
   </div>
 <% end %>

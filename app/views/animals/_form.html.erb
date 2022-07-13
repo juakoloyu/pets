@@ -10,8 +10,11 @@
       </ul>
     </div>
   <% end %>
-  <%= form.text_field :name %>
+  <%= label_tag(:name, t('name')) %>
+  <%= form.text_field :name, class: 'form-control' %>
+  <%= label_tag(:image, t('image')) %>
+  <%= form.file_field :image %>
   <div>
-    <%= form.submit %>
+    <%= form.submit t('create'),class: 'btn btn-primary' %>
   </div>
 <% end %>

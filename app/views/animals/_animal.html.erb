@@ -1,2 +1,10 @@
 <div id="<%= dom_id animal %>">
+  <% if animal.image.attached? %>
+    <%= image_tag animal.image, size: '100' %>
+  <% end %>
+  <%= animal.name %>
+  <%= link_to t('edit'), edit_animal_path(animal), class: 'btn btn-warning' %>
+  <%= button_to t('destroy'), animal, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-danger' %>
 </div>
+
+   

@@ -1,5 +1,26 @@
-<% if user_signed_in? %>
-  <%= button_to t('logout'),destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= button_to t('login'),new_user_session_path %>
-<% end %>
+
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Omiwomi</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <%= link_to t('home'), root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+      <% if user_signed_in? %>
+        <%= link_to t('my_posts'), posts_path, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= button_to t('logout'), destroy_user_session_path, method: :delete, class: 'nav-link active' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to t('login'), new_user_session_path, class: 'nav-link active' %>
+        </li>
+      <% end %>
+    </ul>
+  </header>
+</div>

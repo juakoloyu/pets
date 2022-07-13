@@ -1,0 +1,20 @@
+<%= turbo_frame_tag :posts do %>
+  <div class="swiper swiper_posts">
+    <div class="swiper-wrapper">
+      <% @posts.each do |post| %>
+        <div class="swiper-slide">
+          <%= render post %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+<% end %>
