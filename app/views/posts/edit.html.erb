@@ -1,10 +1,4 @@
 <h1><%= t('post.edit')%></h1>
 
 <%= render "form", post: @post %>
-
 <br>
-
-<div>
-  <%= link_to t("post.show"), @post %> |
-  <%= link_to t("post.back"), posts_path %>
-</div>

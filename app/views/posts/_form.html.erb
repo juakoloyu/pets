@@ -1,8 +1,7 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, class:"bg-white p-4 border shadow-lg rounded-3") do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,13 +9,35 @@
       </ul>
     </div>
   <% end %>
-  <%= t('photos')%>
+  <%= form.label t('photos'), style: "display: block" %>
+  <i>Selecciona una o mas fotos de la mascota</i><br>
   <%= form.fields_for :pictures do |picture_model| %>
-    <%= picture_model.file_field :pic %>
+    <%= picture_model.file_field :pic, class: 'mt-2' %> <br>
+    <%= image_tag picture_model.object.pic, width: '100' if picture_model.object.pic.attached? %>
+    <hr>
   <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= form.label t('post.sexuality'), style: "display: block" %>
+      <%= form.select :sexuality, Post.sexualities.map { |key, value| [t("sexuality.#{key}"), key] }, {}, {class: 'form-select'}%>
+    </div>
+
+    <div class="col-md-4">
+      <%= form.label t('post.size'), style: "display: block" %>
+      <%= form.select :size, Post.sizes.map { |key, value| [t("size.#{key}"), key] }, {}, {class: 'form-select'}%>
+    </div>
+    <div class="col-md-4">
+      <%= form.label t('post.status'), style: "display: block" %>
+      <%= form.collection_radio_buttons :status, Post.statuses, :first, :first do |b| %>
+      <%=  b.radio_button %>
+      <%= t('status.'+b.text) %><br>
+      <% end %>
+    </div>
+  </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
+    <i>Cuéntanos un poco mas acerca de la mascota. Ej: "Le gusta jugar", "Es guardián/a", "Se lleva bien/mal con otros animales", "Su nombre es... (si tiene)", etc. </i>
     <%= form.rich_text_area :description %>
   </div>
 
@@ -28,7 +49,8 @@
     <% end %>
   </div>
 
-  <div class="pt-2">
-    <%= form.submit t('create'), class: 'btn btn-primary' %>
+  <div class="mt-2">
+    <%= form.submit t('post.save'), class: 'btn btn-primary' %>
   </div>
 <% end %>
+

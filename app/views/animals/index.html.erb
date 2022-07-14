@@ -1,12 +1,16 @@
-<h1>Animals</h1>
+<h1><%= t('animals')%></h1>
 
 <div id="animals">
-  <% @animals.each do |animal| %>
-    <%= render animal %>
-    <p>
-      <%= link_to "Show this animal", animal %>
-    </p>
-  <% end %>
+  <table class="table">
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= render animal %></td>
+        <td><%= link_to t('animal.show'), animal, class: 'btn btn-info' %></td>
+        <td><%= link_to t('edit'), edit_animal_path(animal), class: 'btn btn-warning' %></td>
+        <td><%= button_to t('destroy'), animal, form: { data: { turbo_confirm: t('sure') } }, :method => :delete, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
-<%= link_to "New animal", new_animal_path %>
+<%= link_to t('animal.new'), new_animal_path, class: 'btn btn-primary' %>

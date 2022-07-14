@@ -3,8 +3,17 @@ es:
   activerecord:
     attributes:
       post:
-        description: Description
+        description: Descripción
+  animal:
+    back_to_animals: Volver a animales
+    created: Animal creado correctamente
+    destroyed: Animal eliminado correctamente
+    new: Crear animal
+    show: Ver
+    updated: Animal actualizado correctamente
+  animals: Animales
   back: Atrás
+  cancel: Cancelar
   create: Crear
   destroy: Eliminar
   didnt_receive_confirmation_instructions: No recibiste instrucciones de confirmación?
@@ -25,10 +34,32 @@ es:
   photos: Fotos
   post:
     back: Volver
+    cancel: Cancelar
+    created: Publicación creada correctamente. 
+    description: Description
     destroy: Eliminar publicación
+    destroyed: Publicación eliminada correctamente
     edit: Editar
-    my: My
+    my: Mis publicaciónes
     new: Dar en adopción
+    pictures: Fotos
+    save: Guardar
+    sexuality: Sexo
     show: Ver esta publicación
+    size: Tamaño
+    status: Estado
+    updated: Actualizado correctamente
   posts: Publicaciones
+  sexuality:
+    female: Hembra
+    male: Macho
+    unknown: Desconocido
   signup: Registrarme
+  size:
+    large: Grande
+    medium: Mediano
+    small: Pequeño
+  status:
+    adopted: Adoptado
+    pending: Esperando un hogar
+  sure: Estás segura/o?

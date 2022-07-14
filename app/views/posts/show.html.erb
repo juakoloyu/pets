@@ -1,8 +1,30 @@
-<%= @post.description %>
-<% @post.pictures.each do |pic| %>
-  <%= image_tag pic.pic, width: '200' %>
-<% end %>
+<div class="row">
+  <div class="col-md-4">
+    <label style="display: block"><%= t('post.sexuality') %>:</label>
+    <%= t("sexuality.#{@post.sexuality}") %>
+  </div>
+  <div class="col-md-4">
+    <label style="display: block"><%= t('post.size') %>:</label>
+    <%= t("size.#{@post.size}") %>
+  </div>
+  <div class="col-md-4">
+    <label style="display: block"><%= t('post.status') %>:</label>
+    <%= t("status.#{@post.status}") %>
+  </div>
+</div>
+  <label style="display: block"><%= t('post.description') %>:</label>
+  <%= @post.description %>
+  <label style="display: block"><%= t('post.pictures') %>:</label>
+  <% if @post.pictures.any? %>
+    <% @post.pictures.each do |picture| %>
+      <%= image_tag picture.pic, width: '350' if picture.pic.attached? %>
+    <% end %>    
+  <% else %>
+    <i> No hay fotos para mostrar </i>
+  <% end%>
 
+
+<hr>
 <div class="mt-2">
   <%= link_to t("post.edit"), edit_post_path(@post), class: 'btn btn-outline-warning' %> |
   <%= link_to t("post.back"), posts_path, class: 'btn btn-outline-secondary' %>

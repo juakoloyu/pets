@@ -1,6 +1,6 @@
 class SwiperController < ApplicationController
   def home
-    @posts = Post.all
+    @posts = Post.not_adopted
     render template: 'swiper/swiper'
   end
 

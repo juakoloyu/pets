@@ -4,7 +4,16 @@ en:
     attributes:
       post:
         description: Description
+  animal:
+    back_to_animals: Back to animals
+    created: Created
+    destroyed: Destroyed
+    new: New
+    show: Show
+    updated: Updated
+  animals: Animals
   back: Back
+  cancel: Cancel
   create: Create
   destroy: Destroy
   didnt_receive_confirmation_instructions: Didnt receive confirmation instructions
@@ -25,10 +34,32 @@ en:
   photos: Photos
   post:
     back: Back
+    cancel: Cancel
+    created: Created
+    description: Description
     destroy: Destroy
+    destroyed: Destroyed
     edit: Edit
     my: My
     new: New Adoption
+    pictures: Pictures
+    save: Save
+    sexuality: Sexuality
     show: Show
+    size: Size
+    status: Status
+    updated: Updated
   posts: Posts
+  sexuality:
+    female: Female
+    male: Male
+    unknown: Unknown
   signup: Signup
+  size:
+    large: Grande
+    medium: Mediano
+    small: Small
+  status:
+    adopted: Adopted
+    pending: Pending
+  sure: Sure

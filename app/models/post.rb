@@ -7,4 +7,7 @@ class Post < ApplicationRecord
   has_rich_text :description
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy: true
+  enum :sexuality, %i[ male female unknown ]
+  enum :size, %i[ small medium large ]
+  enum :status, %i[ pending adopted ]
 end

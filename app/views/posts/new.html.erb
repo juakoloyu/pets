@@ -2,8 +2,6 @@
 
 <%= render "form", post: @post %>
 
-<br>
-
 <div>
-  <%= link_to t('back'), posts_path %>
+  <%= link_to t('cancel'), posts_path, class: 'btn btn-outline-secondary mt-2' %>
 </div>
